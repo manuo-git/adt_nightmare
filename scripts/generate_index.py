@@ -26,22 +26,36 @@ def create_index_html():
     buttons_html = ""
     for day, url in zip(DAYS, URLS):
         buttons_html += f"""
-        <a href="{url}" class="btn">
-            <span class="day">{day.strftime("%Y/%m/%d")}</span>
-        </a>
-        """
+            <a href="{url}" class="btn">
+                <span class="day">{day.strftime('%Y/%m/%d')}</span>
+            </a>
+            """
 
     html_template = f"""
-    <!DOCTYPE html>
-    <html lang="ja">
+<!doctype html>
+<html lang="ja">
     <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>ADT Nightmare コンテスト情報</title>
         <style>
-            body {{ font-family: 'Helvetica Neue', Arial, sans-serif; background: #f0f2f5; display: flex; justify-content: center; padding: 20px; }}
-            .container {{ width: 100%; max-width: 400px; }}
-            h1 {{ text-align: center; color: #1a1a1a; font-size: 1.5rem; margin-bottom: 20px; }}
+            body {{
+                font-family: 'Helvetica Neue', Arial, sans-serif;
+                background: #f0f2f5;
+                display: flex;
+                justify-content: center;
+                padding: 20px;
+            }}
+            .container {{
+                width: 100%;
+                max-width: 400px;
+            }}
+            h1 {{
+                text-align: center;
+                color: #1a1a1a;
+                font-size: 1.5rem;
+                margin-bottom: 20px;
+            }}
             .btn {{
                 display: flex;
                 justify-content: space-between;
@@ -53,13 +67,26 @@ def create_index_html():
                 margin-bottom: 10px;
                 border-radius: 12px;
                 box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-                transition: transform 0.2s, box-shadow 0.2s;
+                transition:
+                    transform 0.2s,
+                    box-shadow 0.2s;
                 border-left: 5px solid #3498db;
             }}
-            .btn:hover {{ transform: translateY(-2px); box-shadow: 0 6px 12px rgba(0,0,0,0.1); background: #f8f9fa; }}
-            .day {{ font-weight: bold; font-size: 1.1rem; }}
-            .num {{ background: #eee; padding: 4px 10px; border-radius: 20px; font-size: 0.9rem; color: #666; }}
-            .footer {{ text-align: center; font-size: 0.8rem; color: #999; margin-top: 20px; }}
+            .btn:hover {{
+                transform: translateY(-2px);
+                box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+                background: #f8f9fa;
+            }}
+            .day {{
+                font-weight: bold;
+                font-size: 1.1rem;
+            }}
+            .footer {{
+                text-align: center;
+                font-size: 0.8rem;
+                color: #999;
+                margin-top: 20px;
+            }}
         </style>
     </head>
     <body>
@@ -72,8 +99,7 @@ def create_index_html():
             </div>
         </div>
     </body>
-    </html>
-    """
+</html>"""
     
     with open('index.html', 'w', encoding='utf-8') as f:
         f.write(html_template)
