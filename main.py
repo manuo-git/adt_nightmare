@@ -66,7 +66,7 @@ def main():
     
     readme_content = f"""# Weekly ADT Nightmare Problems Picker
 ## 今週の問題
-{ "\n".join([f"### {day.strftime("%m/%d")}\n __{to_str(num)}__ " for day, num in zip(DAYS, task)]) }
+{ "\n".join([f"### AtCoder Daily Training NIGHTMARE {day.strftime("%Y/%m/%d")} 21:00start\n __{to_str(num)}__ " for day, num in zip(DAYS, task)]) }
 
 ---
 *最終更新日: {today.year}年{today.month}月{today.day}日 (UTC)*
