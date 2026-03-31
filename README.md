@@ -1,15 +1,15 @@
 # Weekly ADT Nightmare Problems Picker
 ## 今週の問題
-### 04/06
- __293_D, 425_D, 355_E, 412_E, 241_F, 400_F__ 
-### 04/07
- __219_D, 391_D, 279_E, 328_E, 240_F, 213_F__ 
-### 04/08
- __280_D, 421_D, 268_E, 366_E, 291_F, 266_F__ 
-### 04/09
- __253_D, 432_D, 382_E, 287_E, 434_F, 301_F__ 
-### 04/10
- __365_D, 436_D, 417_E, 298_E, 353_F, 437_F__ 
+### AtCoder Daily Training NIGHTMARE 2026/04/06 21:00start
+ __417_D, 315_D, 273_E, 234_E, 331_F, 316_F__ 
+### AtCoder Daily Training NIGHTMARE 2026/04/07 21:00start
+ __263_D, 290_D, 221_E, 345_E, 371_F, 442_F__ 
+### AtCoder Daily Training NIGHTMARE 2026/04/08 21:00start
+ __388_D, 244_D, 439_E, 265_E, 215_F, 353_F__ 
+### AtCoder Daily Training NIGHTMARE 2026/04/09 21:00start
+ __381_D, 429_D, 427_E, 325_E, 336_F, 221_F__ 
+### AtCoder Daily Training NIGHTMARE 2026/04/10 21:00start
+ __261_D, 222_D, 386_E, 372_E, 238_F, 318_F__ 
 
 ---
 *最終更新日: 2026年3月31日 (UTC)*
