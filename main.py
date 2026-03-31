@@ -35,9 +35,27 @@ TYPE = "DDEEFF"
 def to_str(nums):
     res = []
     for type, num in zip(list(TYPE), nums):
-        res.append(f"{num}_{type}")
+        res.append(f"`{num}_{type}`")
     text = ", ".join(res)
     return text
+
+def problems_text(task):
+    return "\n".join(["## 今週の問題"]+[f"### AtCoder Daily Training NIGHTMARE {day.strftime("%Y/%m/%d")} 21:00start\n {to_str(num)} " for day, num in zip(DAYS, task)])
+
+import requests
+WEBHOOK_URL = os.environ.get("DISCORD_WEBHOOK_URL")
+
+def send_discord_notification(task):
+    
+    content = problems_text(task)
+    
+    data = {"content": content}
+    response = requests.post(WEBHOOK_URL, json=data)
+    
+    if response.status_code == 204:
+        print("Discord通知に成功しました。")
+    else:
+        print(f"Discord通知に失敗しました: {response.status_code}")
 
 def main():
     D = []
@@ -65,8 +83,7 @@ def main():
             f.write(f"{text}\n")
     
     readme_content = f"""# Weekly ADT Nightmare Problems Picker
-## 今週の問題
-{ "\n".join([f"### AtCoder Daily Training NIGHTMARE {day.strftime("%Y/%m/%d")} 21:00start\n __{to_str(num)}__ " for day, num in zip(DAYS, task)]) }
+{problems_text(task)}
 
 ---
 *最終更新日: {today.year}年{today.month}月{today.day}日 (UTC)*
