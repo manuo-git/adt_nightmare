@@ -19,16 +19,14 @@ jobs:
           python-version: "3.x"
 
       - name: Run script
-        run: python main.py # プログラム実行
+        run: python main.py
 
       - name: Commit changes
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          if ! git diff --exit-code used_numbers.txt; then
-            git add used_numbers.txt
-            git commit -m "Update history [skip ci]"
+          git add used_numbers.txt README.md
+          if ! git diff --cached --exit-code; then
+            git commit -m "Update weekly numbers in README [skip ci]"
             git push
-          else
-            echo "No changes to commit"
           fi
