@@ -21,9 +21,6 @@ jobs:
       - name: Run script
         run: python main.py
 
-      - name: Check files
-        run: ls -R
-
       - name: Commit changes
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
