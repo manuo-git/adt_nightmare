@@ -24,7 +24,7 @@ jobs:
       - name: Run script
         env:
           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL1 }}
-        run: python script/generate_numbers.py
+        run: python scripts/generate_numbers.py
 
       - name: Commit changes
         run: |
