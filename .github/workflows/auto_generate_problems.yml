@@ -1,4 +1,4 @@
-name: Weekly ADT Nightmare Problems Picker
+name: Auto Weekly ADT Nightmare Problems Picker
 on:
   schedule:
     - cron: "0 14 * * 6"
@@ -23,8 +23,8 @@ jobs:
 
       - name: Run script
         env:
-          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
-        run: python main.py
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL1 }}
+        run: python script/generate_numbers.py
 
       - name: Commit changes
         run: |

@@ -1,0 +1,50 @@
+name: Manual Update Web & Discord
+on:
+  workflow_dispatch:
+    inputs:
+      id_mon:
+        description: "月曜のURL"
+        required: true
+      id_tue:
+        description: "火曜のURL"
+        required: true
+      id_wed:
+        description: "水曜のURL"
+        required: true
+      id_thu:
+        description: "木曜のURL"
+        required: true
+      id_fri:
+        description: "金曜のURL"
+        required: true
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.14"
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Update Web and Notify
+        env:
+          ID_MON: ${{ github.event.inputs.id_mon }}
+          ID_TUE: ${{ github.event.inputs.id_tue }}
+          ID_WED: ${{ github.event.inputs.id_wed }}
+          ID_THU: ${{ github.event.inputs.id_thu }}
+          ID_FRI: ${{ github.event.inputs.id_fri }}
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL2 }}
+        run: python scripts/generate_index.py
+      - name: Commit Web Changes
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add index.html
+          if ! git diff --cached --exit-code; then
+            git commit -m "[BOT] Manual update contest info [skip ci]"
+            git push
+          fi

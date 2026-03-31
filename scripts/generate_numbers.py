@@ -8,15 +8,16 @@ DAYS_IN_WEEK = 7
 DAYS_IN_WEEKDAY = 5
 WEEKS_IN_MONTH = 4
 END = 400 + (today-ABC400).days//DAYS_IN_WEEK - WEEKS_IN_MONTH
-from random import sample
-HISTORY_FILE = "used_number.txt"
-README_FILE = 'README.md'
 MONDAY = 0
 next_monday_delta = timedelta((MONDAY-today.weekday())%DAYS_IN_WEEK)
 ONEDAY = timedelta(days = 1)
 next_monday = today + next_monday_delta
 DAYS = [next_monday]
 for _ in range(DAYS_IN_WEEKDAY-1): DAYS.append(DAYS[-1] + ONEDAY)
+
+HISTORY_FILE = "used_number.txt"
+README_FILE = 'README.md'
+from random import sample
 
 def pick(ng):
     ok = [n for n in range(START, END+1) if n not in ng]
