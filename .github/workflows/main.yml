@@ -27,6 +27,6 @@ jobs:
           git config --local user.name "github-actions[bot]"
           git add used_number.txt README.md
           if ! git diff --cached --exit-code; then
-            git commit -m "Update weekly numbers in README [skip ci]"
+            git commit -m "[BOT] Update weekly numbers in README [skip ci]"
             git push
           fi
