@@ -28,7 +28,7 @@ jobs:
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git add used_numbers.txt README.md
+          git add used_number.txt README.md
           if ! git diff --cached --exit-code; then
             git commit -m "Update weekly numbers in README [skip ci]"
             git push
