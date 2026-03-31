@@ -91,6 +91,8 @@ def main():
 """
     with open(README_FILE, 'w', encoding='utf-8') as f:
         f.write(readme_content)
+        
+    send_discord_notification(task)
 
 if __name__ == "__main__":
     main()
