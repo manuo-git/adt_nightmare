@@ -86,6 +86,7 @@ def main():
     readme_content = f"""# Weekly ADT Nightmare Problems Picker
 {problems_text(task)}
 
+https://github.com/manuo-git/adt_nightmare/tree/main
 ---
 *最終更新日: {today.year}年{today.month}月{today.day}日 (UTC)*
 *※このファイルは GitHub Actions により自動生成されています。*
