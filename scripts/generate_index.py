@@ -94,7 +94,7 @@ def create_index_html():
             <h1>🏆 ADT Nightmare</h1>
             {buttons_html}
             <div class="footer">
-                最終更新: 2026年4月1日<br>
+                最終更新: {today.year}年{today.month}月{today.day}日<br>
                 ※GitHub Actionsにより毎週手動更新されます
             </div>
         </div>
